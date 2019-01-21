@@ -1,6 +1,5 @@
-FROM nginx:alpine as node
-LABEL author="Mark Kendall"
-WORKDIR angular-app
-COPY . /angular-app
+FROM nginx:alpine
+LABEL author="Sahil Malik"
+COPY ./dist/angular-app /usr/share/nginx/html
 EXPOSE 80 443
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
