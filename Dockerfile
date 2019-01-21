@@ -1,5 +1,5 @@
 FROM nginx:alpine
 LABEL author="Sahil Malik"
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=node /app/dist /usr/share/nginx/html
 EXPOSE 80 443
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
